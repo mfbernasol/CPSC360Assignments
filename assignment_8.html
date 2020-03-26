@@ -1,0 +1,47 @@
+<script type="text/javascript">
+
+
+//function to count words with "e" in string 
+function countStringInfo(str){
+    var wordCount = 0
+    for(var i = 0; i < str.length; i++ ){
+       if(str.charAt(i) === 'e')
+       {
+           wordCount++
+           
+       }
+    }
+    return wordCount
+}
+
+//function to find longest word with e
+function findLongestWord(str) {
+    let wordArray = str.split(' ')
+    let maxLength = 0
+    let result = ''
+    for (let i = 0; i < wordArray.length; i++) {
+        if(str.includes("e")){
+            if (wordArray[i].length > maxLength) {
+             maxLength = wordArray[i].length
+             result = wordArray[i]
+            }
+        }
+        
+    }
+
+    return result
+}
+
+
+//prompts user to enter a string
+var stringInput = prompt("Please enter a string: ")
+
+//variables for functions
+var countWords = countStringInfo(stringInput)
+var findLongWord = findLongestWord(stringInput)
+
+//shows results in alerts
+alert("Number of words with 'e': " + countWords)
+alert("Longest word with letter 'e': " + findLongWord)
+alert("The number of characters in longest word with 'e' is: " + findLongWord.length) //counts characters in string
+</script> 
